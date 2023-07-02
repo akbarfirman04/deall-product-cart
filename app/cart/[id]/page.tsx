@@ -44,7 +44,7 @@ export default function CartPage({ params }: { params: { id: number } }) {
       const data = await response.json();
       const responseProduct = await fetch('https://dummyjson.com/products?limit=0');
       const dataProduct = await responseProduct.json();
-      let arr: UserData[] = [];
+      let arr: ProductData[] = [];
       for (let i = 0; i < data.products.length; i++) {
         arr = arr
           .concat(dataProduct.products.find((x : ProductData) => x.id == data.products[i].id));
