@@ -54,7 +54,7 @@ export default function Product() {
       label: 'Total Amount',
     },
   ];
-  const renderCell = (cart : CartData, columnKey: React.Key) => {
+  const renderCell = (cart : CartData, columnKey: keyof CartData) => {
     const cellValue = cart[columnKey];
     switch (columnKey) {
       case 'id':
@@ -92,7 +92,7 @@ export default function Product() {
       <Table.Body items={carts}>
         {(item: CartData) => (
           <Table.Row key={item.id}>
-            {(columnKey) => <Table.Cell>{renderCell(item, columnKey)}</Table.Cell>}
+            {(columnKey : keyof CartData) => <Table.Cell>{renderCell(item, columnKey)}</Table.Cell>}
           </Table.Row>
         )}
       </Table.Body>
