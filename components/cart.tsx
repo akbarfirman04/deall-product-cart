@@ -26,7 +26,7 @@ export default function Product() {
       const data = await response.json();
       const responseUser = await fetch('https://dummyjson.com/users?limit=0');
       const dataUser = await responseUser.json();
-      const filteredData = dataUser.users.map(({ id, firstName, lastName }) => ({
+      const filteredData = dataUser.users.map(({ id, firstName, lastName } : UserData) => ({
         id,
         firstName,
         lastName,
