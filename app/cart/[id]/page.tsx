@@ -55,7 +55,7 @@ export default function CartPage({ params }: { params: { id: number } }) {
     const fetchUser = async () => {
       const response = await fetch('https://dummyjson.com/users?limit=0');
       const data = await response.json();
-      const filteredData = data.users.map(({ id, firstName, lastName }) => ({
+      const filteredData = data.users.map(({ id, firstName, lastName } : UserData) => ({
         id,
         firstName,
         lastName,
