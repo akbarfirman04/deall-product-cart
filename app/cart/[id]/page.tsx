@@ -47,7 +47,7 @@ export default function CartPage({ params }: { params: { id: number } }) {
       let arr: ProductData[] = [];
       for (let i = 0; i < data.products.length; i++) {
         arr = arr
-          .concat(dataProduct.products.find((x : ProductData) => x.id == data.products[i].id));
+          .concat(dataProduct.products.find((x : ProductData) => x.id === data.products[i].id));
       }
       setCarts(data);
       setProducts(arr);

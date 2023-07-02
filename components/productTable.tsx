@@ -18,13 +18,13 @@ type ProductData = {
   thumbnail: string,
   title: string,
 };
-
+type Column = {
+  key : string,
+  label : string
+};
 type ProductTableProps = {
   products: ProductData[];
-  columns: {
-    key : string,
-    label : string
-  }
+  columns: Column[]
 };
 
 const ProductTable: React.FC<ProductTableProps> = function showTable({ products, columns }) {
