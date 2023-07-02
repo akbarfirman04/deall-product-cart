@@ -46,7 +46,8 @@ export default function CartPage({ params }: { params: { id: number } }) {
       const dataProduct = await responseProduct.json();
       let arr: UserData[] = [];
       for (let i = 0; i < data.products.length; i++) {
-        arr = arr.concat(dataProduct.products.find((x) => x.id == data.products[i].id));
+        arr = arr
+          .concat(dataProduct.products.find((x : ProductData) => x.id == data.products[i].id));
       }
       setCarts(data);
       setProducts(arr);
